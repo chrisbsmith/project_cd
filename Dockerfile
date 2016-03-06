@@ -1,14 +1,15 @@
 FROM ubuntu:12.04
 MAINTAINER Chris Smith, chris.b.smith@gmail.com
 
+
 # General
 RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
 RUN apt-get update && apt-get clean
-RUN apt-get install -q -y wget unzip openjdk-7-jdk && apt-get clean
-# RUN apt-get install -q -y unzip
+RUN apt-get install -q -y wget
+RUN apt-get install -q -y unzip
 
 # JDK
-#RUN apt-get install -q -y openjdk-7-jdk && apt-get clean
+RUN apt-get install -q -y openjdk-7-jdk && apt-get clean
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
 # GIT
